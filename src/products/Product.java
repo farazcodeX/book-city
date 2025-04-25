@@ -19,9 +19,12 @@ public abstract class Product {
             this.id = id;
         }
     }
+    public String getTitle() {return title;}
+    public String getId() {return id;}
+    public double getPrice() {return price;}
     public String toString() {
         return "ID : " + id + "  title : " + title + "  price : " + price;
     }
-    
+
     protected abstract String generated(); 
 }
