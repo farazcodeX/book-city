@@ -4,8 +4,9 @@ public class Notebook extends Product{
 
     private int pageCount;
     private boolean isHardCover;
-    public Notebook(String name, double price, String id, int pages, boolean isHard) {
-        super(name, price, id);
+    private static int counter = 1;
+    public Notebook(String name, double price, int pages, boolean isHard) {
+        super(name, price);
         this.isHardCover = isHard;
         setPageCount(pages);   
     }
@@ -20,9 +21,8 @@ public class Notebook extends Product{
     }
 
     @Override
-    protected String generated() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'generated'");
+    protected String generateID() {
+        return "2" + String.format("%03d", counter++);
     }
 
 
