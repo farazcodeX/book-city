@@ -13,6 +13,7 @@ public class Inventory<T extends Product> {
     }
     public T findItemsById(String id) {
         if(items.containsKey(id)) {
+            System.out.println("Item ID  : " + id + " found");
             return items.get(id);
         }
         System.out.println("Item : ID  " + id + " not found");
@@ -23,6 +24,17 @@ public class Inventory<T extends Product> {
     }
     public void displayAll() {
         items.values().stream().forEach(item -> System.out.println(item.toString()));
+    }
+    public double calculateTotalPrice() {
+        return items.values().stream().mapToDouble(item -> item.getPrice()).sum();
+    }
+    public void removeItemById(String id) {
+        if(items.containsKey(id)) {
+            items.remove(id);
+            System.out.println("Itmem ID : " + id + " removed successfully");
+        } else {
+            System.out.println("item id : " + id + " not found");
+        }
     }
 
 }
