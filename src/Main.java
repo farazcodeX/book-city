@@ -17,7 +17,7 @@ public class Main {
         accessoryInventory.addItems(new Accessory("Accessory A", 20.0, "Red"));
         accessoryInventory.addItems(new Accessory("Accessory B", 25.0, "Blue"));
 
-        // نمایش محصولات
+   
         System.out.println("Books:");
         bookInventory.displayAll();
         System.out.println("\nNotebooks:");
